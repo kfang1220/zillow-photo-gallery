@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import Photo from './Photo.js'
+import Swipe from './Swipe.js';
 
 class PhotoGallery extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            images: this.props.photos,
+            index: 0
+        }
     }
 
     render() {
@@ -14,7 +18,8 @@ class PhotoGallery extends Component {
             // Will have photo components here
             <div className="Photo-gallery">
                 <h1>PhotoGallery</h1>
-                <Photo image={this.props.photos[0]}/>
+                {/* <Photo image={this.props.photos[0]}/> */}
+                <Swipe images={this.props.photos} index={this.state.index} />
             </div>
            
         )
