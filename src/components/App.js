@@ -22,7 +22,7 @@ class App extends Component {
       <div className="App">
         <h1 className="Zillow-Photo-Gallery">Zillow Photo Gallery</h1>
         <PhotoGallery 
-          photos = {arrayOfPhotos}
+          photos={arrayOfPhotos}
          />
       </div>
     );

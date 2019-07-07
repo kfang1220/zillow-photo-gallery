@@ -8,8 +8,14 @@ class Photo extends Component {
     }
 
     render() {
+        console.log(this.props.image)
         return (
-            <h1>Single photo</h1>
+            // <h1>Single photo</h1>
+            <div className="Photo-image">
+                <h1>hi</h1>
+                <img src={this.props.image.url} />
+                <h2>{this.props.image.caption}</h2>
+            </div>
         )
     }
 }

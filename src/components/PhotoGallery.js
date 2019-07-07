@@ -8,12 +8,13 @@ class PhotoGallery extends Component {
     }
 
     render() {
+        //console.log(this.props.photos[0])
         return (
             // place holder
             // Will have photo components here
-            <div>
+            <div className="Photo-gallery">
                 <h1>PhotoGallery</h1>
-                <Photo />
+                <Photo image={this.props.photos[0]}/>
             </div>
            
         )
