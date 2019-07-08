@@ -4,6 +4,7 @@ import PhotoGallery from './PhotoGallery';
 
 class App extends Component {
   render() {
+    // move array into new file and import it in and pass down as prop
     const arrayOfPhotos = [
       {
         url: 'https://www.opodo.co.uk/blog/wp-content/uploads/sites/12/2016/04/jiuzhaigou-lake.jpg',
@@ -509,7 +510,7 @@ class App extends Component {
         url: 'http://i.huffpost.com/gen/2536550/original.jpg',
         caption: 'New adventures away'
       },
-      
+
 
       
     ]

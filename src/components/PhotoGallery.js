@@ -15,6 +15,9 @@ class PhotoGallery extends Component {
         this.onGalleryClick = this.onGalleryClick.bind(this);
     }
 
+    //use es6 syntax to avoid binding functions
+    //install prettier
+
     onLeftClick() {
         if(this.state.currentIndex > 0) {
             this.setState({
@@ -32,7 +35,6 @@ class PhotoGallery extends Component {
     }
 
     onGalleryClick(event) {
-        // console.log(event.target.getAttribute('index'))
         this.setState({
             currentIndex: event.target.getAttribute('index')
         })
