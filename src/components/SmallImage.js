@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/SmallImage.css'
+import '../css/smallImage.css'
 
 class SmallImage extends Component {
     constructor(props) {

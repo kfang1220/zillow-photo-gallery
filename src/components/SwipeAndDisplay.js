@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
 import Photo from './Photo';
-import '../css/SwipeAndDisplay.css';
+import '../css/swipeAndDisplay.css';
 //we can import as well
 const ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 

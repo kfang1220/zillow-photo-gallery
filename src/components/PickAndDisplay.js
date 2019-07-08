@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SmallImage from './SmallImage.js'
-import '../css/PickAndDisplay.css'
+import '../css/pickAndDisplay.css'
 
 class PickAndDisplay extends Component {
     constructor(props) {
@@ -17,7 +17,6 @@ class PickAndDisplay extends Component {
 
     //change page to the number chosen
     handlePageClick = (event) => {
-        console.log(event.target.getAttribute('id'))
         this.setState({
             currentPage: Number(event.target.getAttribute('id'))
         })
@@ -46,6 +45,12 @@ class PickAndDisplay extends Component {
         })
     }
 
+    generateImages = (currentImages) => {
+        return currentImages.map( (image, index) => {
+            return <SmallImage image={image.url} index={index} key={index} onImageClick={this.props.onGalleryClick}/>
+            })
+    } 
+
 
     render() {
         // pagination attempt
@@ -56,10 +61,6 @@ class PickAndDisplay extends Component {
         const indexOfFirstImage = indexOfLastImage - imagesPerPage;
         const currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
 
-        const generateImages = currentImages.map( (image, index) => {
-            return <SmallImage image={image.url} index={index} key={index} onImageClick={this.props.onGalleryClick}/>
-            })
-
         for(let i = 1; i <= Math.ceil(this.state.images.length/this.state.imagesPerPage); i++) {
             pageNumbers.push(i)
         }
@@ -67,7 +68,7 @@ class PickAndDisplay extends Component {
         return (
             <div>
                 <div className="Gallery-display">
-                {generateImages}
+                {this.generateImages(currentImages)}
             </div>
                 <div className="pagination">
                 {this.generatePageNumbers(pageNumbers)}

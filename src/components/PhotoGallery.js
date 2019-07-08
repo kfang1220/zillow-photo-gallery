@@ -10,13 +10,12 @@ class PhotoGallery extends Component {
             images: this.props.photos,
             currentIndex: 0
         }
+
+        //did not have to bind, if I used es6 arrow functions but chose to do both;
         this.onLeftClick = this.onLeftClick.bind(this);
         this.onRightClick = this.onRightClick.bind(this);
         this.onGalleryClick = this.onGalleryClick.bind(this);
     }
-
-    //use es6 syntax to avoid binding functions
-    //install prettier
 
     onLeftClick() {
         if(this.state.currentIndex > 0) {
@@ -46,7 +45,6 @@ class PhotoGallery extends Component {
         return (
             <div className="Photo-gallery">
                 <h4>PhotoGallery</h4>
-                {/* <Photo image={this.props.photos[0]}/> */}
                 <SwipeAndDisplay images={this.props.photos} onLeftClick={this.onLeftClick} onRightClick={this.onRightClick} index={this.state.currentIndex} />
                 <PickAndDisplay images={this.props.photos} index={this.state.currentIndex} onGalleryClick={this.onGalleryClick}/>
             </div>
