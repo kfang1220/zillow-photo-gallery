@@ -7,7 +7,6 @@ class LeftArrow extends Component {
     }
     render() {
         return (
-            //temp buttons to make more visible
             <button className="Left-arrow" onClick={this.props.previousImage}>
                 <div>Go Left!</div>
             </button>

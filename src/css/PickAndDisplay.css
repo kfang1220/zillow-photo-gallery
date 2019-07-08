@@ -5,3 +5,11 @@
     padding-top: 50px;
     flex-wrap: wrap;
 }
+
+.pagination {
+    margin-top: 50px;
+}
+
+.indiv-button {
+    margin-left: 10px;
+}

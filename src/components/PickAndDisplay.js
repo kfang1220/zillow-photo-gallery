@@ -24,7 +24,7 @@ class PickAndDisplay extends Component {
     }
 
     // Don't actually need will Mount, can directly change state
-    // Also depricated life cycle, willMount and constructor can do the same
+    // Also depricated life cycle, willMount and constructor can do the same thing.
     componentWillMount() {
         this.setState({
             images: this.props.images,
@@ -32,10 +32,25 @@ class PickAndDisplay extends Component {
         })
     }
 
+    generatePageNumbers = (pageNumbers) => {
+        return pageNumbers.map(num => {
+            return (
+                <button className="indiv-button"
+                  key={num}
+                  id={num}
+                  onClick={this.handlePageClick}
+                >
+                  {num}
+                </button>
+              );
+        })
+    }
+
 
     render() {
         // pagination attempt
         // let img = this.state.images;
+        const pageNumbers = []
         const { images, currentPage, imagesPerPage} = this.state;
         const indexOfLastImage = currentPage * imagesPerPage;
         const indexOfFirstImage = indexOfLastImage - imagesPerPage;
@@ -45,35 +60,17 @@ class PickAndDisplay extends Component {
             return <SmallImage image={image.url} index={index} key={index} onImageClick={this.props.onGalleryClick}/>
             })
 
-        const pageNumbers = []
         for(let i = 1; i <= Math.ceil(this.state.images.length/this.state.imagesPerPage); i++) {
             pageNumbers.push(i)
         }
-
-        const generatePageNumbers = pageNumbers.map(num => {
-            return (
-                <button
-                  key={num}
-                  id={num}
-                  onClick={this.handlePageClick}
-                >
-                  {num}
-                </button>
-              );
-        })
-
-
-        
+        console.log(pageNumbers)
         return (
             <div>
                 <div className="Gallery-display">
-                {/* { img.map( (image, index) => {
-                return <SmallImage image={image.url} index={index} key={index} onImageClick={this.props.onGalleryClick}/>
-                })} */}
                 {generateImages}
             </div>
-                <div>
-                {generatePageNumbers}
+                <div className="pagination">
+                {this.generatePageNumbers(pageNumbers)}
                 </div>
             </div>
             
