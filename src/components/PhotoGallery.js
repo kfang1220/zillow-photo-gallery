@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Photo from './Photo.js'
 import SwipeAndDisplay from './SwipeAndDisplay.js';
+import PickAndDisplay from './PickAndDisplay.js';
 
 class PhotoGallery extends Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class PhotoGallery extends Component {
         }
         this.onLeftClick = this.onLeftClick.bind(this);
         this.onRightClick = this.onRightClick.bind(this);
+        this.onGalleryClick = this.onGalleryClick.bind(this);
     }
 
     onLeftClick() {
@@ -29,16 +31,19 @@ class PhotoGallery extends Component {
         }
     }
 
+    onGalleryClick(event) {
+        // console.log(event.target.getAttribute('index'))
+    }
+
 
 
     render() {
-        //console.log(this.props.photos[0])
-        console.log(this.state.currentIndex)
         return (
             <div className="Photo-gallery">
                 <h4>PhotoGallery</h4>
                 {/* <Photo image={this.props.photos[0]}/> */}
                 <SwipeAndDisplay images={this.props.photos} onLeftClick={this.onLeftClick} onRightClick={this.onRightClick} index={this.state.currentIndex} />
+                <PickAndDisplay images={this.props.photos} index={this.state.currentIndex} onGalleryClick={this.onGalleryClick}/>
             </div>
            
         )
