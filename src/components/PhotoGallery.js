@@ -44,7 +44,6 @@ class PhotoGallery extends Component {
     render() {
         return (
             <div className="Photo-gallery">
-                <h4>PhotoGallery</h4>
                 <SwipeAndDisplay images={this.props.photos} onLeftClick={this.onLeftClick} onRightClick={this.onRightClick} index={this.state.currentIndex} />
                 <PickAndDisplay images={this.props.photos} index={this.state.currentIndex} onGalleryClick={this.onGalleryClick}/>
             </div>

@@ -7,8 +7,8 @@ class PickAndDisplay extends Component {
         super(props);
 
         this.state = {
-            images: [],
-            currentIndex: 0,
+            images: this.props.images,
+            currentIndex: this.props.index,
             currentPage: 1,
             //using 11 to show changes in images
             imagesPerPage: 11
@@ -19,15 +19,6 @@ class PickAndDisplay extends Component {
     handlePageClick = (event) => {
         this.setState({
             currentPage: Number(event.target.getAttribute('id'))
-        })
-    }
-
-    // Don't actually need will Mount, can directly change state
-    // Also depricated life cycle, willMount and constructor can do the same thing.
-    componentWillMount() {
-        this.setState({
-            images: this.props.images,
-            currentIndex: this.props.index
         })
     }
 

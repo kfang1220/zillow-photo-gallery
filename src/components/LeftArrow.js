@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../css/arrow.css'
 
 class LeftArrow extends Component {
     constructor(props) {
@@ -6,9 +7,8 @@ class LeftArrow extends Component {
     }
     render() {
         return (
-            <button className="Left-arrow" onClick={this.props.previousImage}>
-                <div>Go Left!</div>
-            </button>
+            <i className="Left-arrow left" onClick={this.props.previousImage}>
+            </i>
         )
     }
 }

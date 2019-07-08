@@ -7,9 +7,8 @@ class RightArrow extends Component {
 
     render() {
         return (
-            <button className="Right-arrow"  onClick={this.props.nextImage}>
-                <div>Go right!</div>
-            </button>
+            <i className="Right-arrow right"  onClick={this.props.nextImage}>
+            </i>
         )
     }
 }

@@ -1,6 +1,6 @@
 #Zillow-Photo-Gallery
 
-Photo Gallery that lets you swipe through images or click and view them in full detail!
+Simple Photo Gallery that lets you swipe through images or click and view them in full detail!
 
 # Installation
 1.git clone
