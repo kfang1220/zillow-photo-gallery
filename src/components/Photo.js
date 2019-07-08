@@ -13,6 +13,7 @@ class Photo extends Component {
 
         return (
             // <h1>Single photo</h1>
+            
             <div className="Photo-image">
                 <img className="image" src={this.props.image.url} />
                 <h2>{this.props.image.caption}</h2>
