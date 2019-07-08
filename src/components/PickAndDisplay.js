@@ -10,7 +10,7 @@ class PickAndDisplay extends Component {
             images: [],
             currentIndex: 0,
             currentPage: 1,
-            imagesPerPage: 5
+            imagesPerPage: 11
         }
     }
 
@@ -28,19 +28,49 @@ class PickAndDisplay extends Component {
 
 
     render() {
-        // const renderImages = this.state.images.map((image,index)=> {
-        //     return <SmallImage key={index}/>
-        // })
-        let img = this.state.images;
-        console.log(img)
+        // pagination attempt
+        // let img = this.state.images;
+        const { images, currentPage, imagesPerPage} = this.state;
+        const indexOfLastImage = currentPage * imagesPerPage;
+        const indexOfFirstImage = indexOfLastImage - imagesPerPage;
+        const currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
+
+        const generateImages = currentImages.map( (image, index) => {
+            return <SmallImage image={image.url} index={index} key={index} onImageClick={this.props.onGalleryClick}/>
+            })
+
+        const pageNumbers = []
+        for(let i = 1; i <= Math.ceil(this.state.images.length/this.state.imagesPerPage); i++) {
+            pageNumbers.push(i)
+        }
+
+        const generatePageNumbers = pageNumbers.map(num => {
+            return (
+                <button
+                  key={num}
+                  id={num}
+                  onClick={this.handleClick}
+                >
+                  {num}
+                </button>
+              );
+        })
+
+
         
         return (
-            <div className="Gallery-display">
-                { img.map( (image, index) => {
+            <div>
+                <div className="Gallery-display">
+                {/* { img.map( (image, index) => {
                 return <SmallImage image={image.url} index={index} key={index} onImageClick={this.props.onGalleryClick}/>
-                }
-        )}
+                })} */}
+                {generateImages}
             </div>
+                <div>
+                {generatePageNumbers}
+                </div>
+            </div>
+            
         )
     }
 }
