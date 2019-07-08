@@ -17,7 +17,7 @@ class PhotoGallery extends Component {
             // place holder
             // Will have photo components here
             <div className="Photo-gallery">
-                <h1>PhotoGallery</h1>
+                <h4>PhotoGallery</h4>
                 {/* <Photo image={this.props.photos[0]}/> */}
                 <Swipe images={this.props.photos} index={this.state.index} />
             </div>

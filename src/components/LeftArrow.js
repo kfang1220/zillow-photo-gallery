@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+//import '../css/LeftArrow.css'
 
 class LeftArrow extends Component {
     constructor(props) {

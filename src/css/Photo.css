@@ -1,0 +1,24 @@
+image {
+    width: 100px;
+    height: 200px;
+}
+
+img {
+    width: 800px;
+    height: 500px;
+}
+
+h2 {
+    position: absolute;
+    top: 325px;
+    left: 0px;
+    width: 100%;
+    color: red;
+    font-size: 30px;
+}
+
+/*
+We can add a block or border around the caption; the quesiton was a bit open ended but I believe a text block would've looked better/easier to read
+But for the sake of the task and following instructions, I'll leave it be
+*/
+

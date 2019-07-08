@@ -10,12 +10,7 @@ class Photo extends Component {
 
     render() {
         //console.log(this.props)
-        const styles = {
-            backgroundImage: `url(${this.props.image.url})`,
-            backgroundSize: '100%',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-        }
+
         return (
             // <h1>Single photo</h1>
             <div className="Photo-image">
