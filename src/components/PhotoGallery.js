@@ -33,6 +33,9 @@ class PhotoGallery extends Component {
 
     onGalleryClick(event) {
         // console.log(event.target.getAttribute('index'))
+        this.setState({
+            currentIndex: event.target.getAttribute('index')
+        })
     }
 
 

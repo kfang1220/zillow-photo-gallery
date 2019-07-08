@@ -23,30 +23,6 @@ class SwipeAndDisplay extends Component {
         this.setState({currentIndex: this.props.index})
     }
 
-    // get images/captions from photo gallery through props
-
-
-    /*           Functionality for Swiping                 */
-
-    // previousImage() {
-    //     if(this.state.currentIndex > 0) {
-    //         this.setState({
-    //             currentIndex: this.state.currentIndex - 1
-    //         })
-    //     }
-	// }
-
-    // // Changes current index to know what image we are on but also know the previous index through prevState
-    // nextImage() {
-    //     if(this.state.currentIndex < this.state.images.length -1) {
-    //         this.setState({
-    //             currentIndex: this.state.currentIndex + 1
-    //         })
-    //     }
-	// }
-
-
-
     render() {
         console.log(this.props)
         console.log(this.state)
